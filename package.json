@@ -1,0 +1,23 @@
+{
+  "name": "orange-weather",
+  "version": "1.0.0",
+  "description": "A single page that consumes orange-weather-api's JSON to display the weather forecast for Orange, NSW.",
+  "main": "index.js",
+  "scripts": {
+    "serve": "python -m SimpleHTTPServer 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neurotech/orange-weather.git"
+  },
+  "author": "Tim Douglas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neurotech/orange-weather/issues"
+  },
+  "homepage": "https://github.com/neurotech/orange-weather#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "semistandard": "11.0.0"
+  }
+}
