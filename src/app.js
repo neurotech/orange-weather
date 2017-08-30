@@ -1,26 +1,31 @@
-// let url = 'https://orange-weather-api-gclktlusnl.now.sh/';
-let url = 'http://0.0.0.0:3000';
+let url = 'https://orange-weather-api.herokuapp.com/';
 
-var app = new Vue({
+var app = new Moon({
   el: '#app',
   data: {
-    lastUpdated: {},
+    lastUpdated: {
+      date: null,
+      prettyDate: null,
+      prettyTime: null
+    },
     forecasts: null
-  },
-  created: function () {
-    this.fetchData();
   },
   methods: {
     fetchData: function () {
-      var xhr = new XMLHttpRequest();
       var self = this;
+      var xhr = new XMLHttpRequest();
       xhr.open('GET', url);
       xhr.onload = function () {
         var json = JSON.parse(xhr.responseText);
-        self.lastUpdated = json.lastUpdated;
-        self.forecasts = json.forecasts;
+        self.set('lastUpdated', json.lastUpdated);
+        self.set('forecasts', json.forecasts);
       };
       xhr.send();
+    }
+  },
+  hooks: {
+    mounted: function () {
+      this.callMethod('fetchData');
     }
   }
 });
