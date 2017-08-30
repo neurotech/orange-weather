@@ -1,0 +1,38 @@
+doctype html
+html(lang='en-AU')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(property="og:url" content="http://timdouglas.co/orange")
+    meta(property="og:title" content="Orange Weather")
+    meta(property="og:description" content="7-day forecast for Orange, NSW.")
+    meta(property="og:image" content="/images/unfurl.png")    
+    title Weather for Orange, NSW
+    link(rel="icon" href="favicon.ico")
+    link(rel="icon" href="favicon.png")
+    link(rel='stylesheet', href='index.css')
+    link(rel='stylesheet', href='tachyons.min.css')
+    script(src='moon.min.js')
+
+  body.pa3.avenir
+    #app.center
+      #header.mb4.pb2.f4.f2-ns.fw6.tc.tl-ns Weather for Orange, NSW
+      #forecasts(m-for='forecast in forecasts').mb5.cf
+        #overview.fl.dn.db-ns.w-10-ns.tc.dn.db-ns
+          #weather-icon(class="weather {{forecast.forecast.iconName}}").mb3.center
+
+        #details.fl.w-100.w-90-ns.pl4-ns
+          #date.mb1.pb1.f3.fw6.tc.tl-ns {{ forecast.prettyDate }}
+          #summary.mv2.f4.lh-copy {{ forecast.forecast.summary }}
+          #metrics.w-100.cf.mt2.mt3-ns.f4.f5-ns
+            #temperatures(m-if='forecast.forecast.temperatures.min').fl.w-100.w-50-ns.pb3.pb0-ns.tr.tl-ns <span class="plain-text">{{ forecast.forecast.temperatures.min }}°C</span> to <span class="plain-text">{{ forecast.forecast.temperatures.max }}°C</span>
+            #temperatures(m-if='!forecast.forecast.temperatures.min').fl.w-100.w-50-ns.pb3.pb0-ns.tr.tl-ns <span class="plain-text">{{ forecast.forecast.temperatures.max }}°C</span>
+            #rain.fl.w-100.w-50-ns.tc.tr-ns
+              #rain-chance(m-if="forecast.forecast.rainChance === '0'") <span class="plain-text">{{ forecast.forecast.rainChance }}%</span> chance of rainfall.
+              #rain-chance(m-if='forecast.forecast.rainChance > 0') <span class="plain-text">{{ forecast.forecast.rainChance }}%</span> chance for <span class="plain-text">{{ forecast.forecast.rainfall }}</span> of rainfall.
+
+      footer(m-if='lastUpdated.prettyDate').tc Data freshness: {{ lastUpdated.prettyTime }} on {{ lastUpdated.prettyDate }}
+  
+  script(src='app.js')

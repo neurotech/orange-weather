@@ -1,0 +1,132 @@
+// Palette
+$base: white;
+$key: #5077F3;
+$text: #444D7C;
+$emphasis: #001350;
+$subtle: #848BAD;
+$pale: #D9E0F0;
+$key-hover: #FF5B8B;
+$grey: #AAAAAA;
+$red: #FF5656;
+$blue: #20A0FF;
+$yellow: #FFC337;
+$green: #12CE66;
+
+// Base Elements
+body {
+  background-color: $base;
+  color: $text;
+}
+#app {
+  max-width: 48rem;
+}
+#header {
+  border-bottom-style: solid;
+  border-bottom-width: .125rem;
+  border-color: $pale;
+}
+.w-15 { width: 15%; }
+.w-85 { width: 85%; }
+.plain-text {
+  color: $text;
+  font-weight: 500;
+}
+footer {
+  color: $subtle;
+}
+
+// Overview Elements
+#overview { color: $subtle; }
+
+// Details Elements
+#date {
+  color: $key;
+  border-bottom-style: dotted;
+  border-bottom-width: .125rem;
+  border-color: $pale;
+}
+#summary {}
+#temperatures { color: $subtle; }
+#rain {
+  color: $subtle;
+}
+#rain-chance {}
+#rain-amount {}
+
+// Weather Icons
+$weather-icon-size: 2.5rem;
+.weather {
+  width: $weather-icon-size;
+  padding: $weather-icon-size;
+  background-repeat: no-repeat;
+}
+.weather.sunny {
+  background-color: $yellow;
+  -webkit-mask: url('/images/sunny.svg') no-repeat;
+  mask: url('/images/sunny.svg') no-repeat;
+}
+.weather.clear {
+  background-color: $yellow;
+  -webkit-mask: url('/images/sunny.svg') no-repeat;
+  mask: url('/images/sunny.svg') no-repeat;
+}
+.weather.partly_cloudy {
+  background-color: $subtle;
+  -webkit-mask: url('/images/partly_cloudy.svg') no-repeat;
+  mask: url('/images/partly_cloudy.svg') no-repeat;
+}
+.weather.cloudy {
+  background-color: $subtle;
+  -webkit-mask: url('/images/cloudy.svg') no-repeat;
+  mask: url('/images/cloudy.svg') no-repeat;
+}
+.weather.hazy {
+  background-color: $subtle;
+  -webkit-mask: url('/images/hazy.svg') no-repeat;
+  mask: url('/images/hazy.svg') no-repeat;
+}
+.weather.windy {
+  background-color: $subtle;
+  -webkit-mask: url('/images/windy.svg') no-repeat;
+  mask: url('/images/windy.svg') no-repeat;
+}
+.weather.fog {
+  background-color: $subtle;
+  -webkit-mask: url('/images/fog.svg') no-repeat;
+  mask: url('/images/fog.svg') no-repeat;
+}
+.weather.light_rain {
+  background-color: $blue;
+  -webkit-mask: url('/images/light_rain.svg') no-repeat;
+  mask: url('/images/light_rain.svg') no-repeat;
+}
+.weather.shower {
+  background-color: $blue;
+  -webkit-mask: url('/images/rain.svg') no-repeat;
+  mask: url('/images/rain.svg') no-repeat;
+}
+.weather.rain {
+  background-color: $blue;
+  -webkit-mask: url('/images/rain.svg') no-repeat;
+  mask: url('/images/rain.svg') no-repeat;
+}
+.weather.dusty {
+  background-color: $grey;
+  -webkit-mask: url('/images/hazy.svg') no-repeat;
+  mask: url('/images/hazy.svg') no-repeat;
+}
+.weather.frost {
+  background-color: $key;
+  -webkit-mask: url('/images/frost.svg') no-repeat;
+  mask: url('/images/frost.svg') no-repeat;
+}
+.weather.snow {
+  background-color: $key;
+  -webkit-mask: url('/images/snow.svg') no-repeat;
+  mask: url('/images/snow.svg') no-repeat;
+}
+.weather.storm {
+  background-color: $emphasis;
+  -webkit-mask: url('/images/storm.svg') no-repeat;
+  mask: url('/images/storm.svg') no-repeat;
+}
