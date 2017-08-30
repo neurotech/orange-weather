@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# echo "Syncing images to S3."
-# s3cmd sync --acl-public --no-mime-magic --add-header "Cache-Control:public, max-age=31536000" --include='*.png' --exclude='*.html' --exclude='*.css' --exclude='*.js' --exclude='.DS_Store' -r ./build/ s3://orange-weather/
+echo "Syncing images to S3."
+s3cmd sync --acl-public --no-mime-magic --add-header "Cache-Control:public, max-age=31536000" --include='*.png' --exclude='*.svg' --exclude='*.html' --exclude='*.css' --exclude='*.js' --exclude='.DS_Store' -r ./build/ s3://orange-weather/
 
 echo "Syncing HTML, CSS, JS to S3."
 rm -rf build-gz;
