@@ -33,7 +33,7 @@
     "pug-cli": "1.0.0-alpha6",
     "tachyons": "4.8.1",
     "tachyons-cli": "1.0.11",
-    "vue": "2.4.2"
+    "vue": "2.4.3"
   },
   "devDependencies": {
     "semistandard": "11.0.0",
